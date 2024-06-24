@@ -106,7 +106,7 @@ function calculateGPA() {
     const resultElement = document.getElementById('result');
     resultElement.innerText = `Your GPA is: ${gpa.toFixed(2)}`;
 
-    
+
     if (gpa >= 3.8) {
         fireFireworks();
     }
@@ -120,7 +120,7 @@ function resetForm() {
     resultElement.innerText = '';
 
     courseCount = 1;
-    addCourse(); 
+    addCourse(); // Re-add the initial course input
 }
 
 function fireFireworks() {
@@ -128,7 +128,7 @@ function fireFireworks() {
     fireworksContainer.className = 'fireworks-container';
     document.body.appendChild(fireworksContainer);
 
-  
+    // Create multiple fireworks particles
     for (let i = 0; i < 30; i++) {
         const particle = document.createElement('div');
         particle.className = 'firework';
@@ -141,7 +141,7 @@ function fireFireworks() {
         particle.style.height = `${size}px`;
         particle.style.backgroundColor = color;
 
-       
+        // Randomize initial position
         const posX = Math.random() * window.innerWidth;
         const posY = Math.random() * window.innerHeight;
         particle.style.left = `${posX}px`;
@@ -152,7 +152,7 @@ function fireFireworks() {
         particle.style.animation = `fireworkAnimation ${duration}s ease-out`;
     }
 
-   
+    // Remove fireworks after animation ends
     setTimeout(() => {
         fireworksContainer.remove();
     }, 3000);
@@ -163,5 +163,5 @@ function getRandomColor() {
     return colors[Math.floor(Math.random() * colors.length)];
 }
 
-
+// Initialize with one course
 addCourse();
