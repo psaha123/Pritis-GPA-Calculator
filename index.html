@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GPA Calculator</h1>
+        
+        <div id="courses-container" class="courses-table">
+            <div class="course-header">
+                <div class="course-label">Course Name</div>
+                <div class="course-label">Grade</div>
+                <div class="course-label">Credits</div>
+            </div>
+            <div class="course" id="course1">
+                <input type="text" class="course-name" placeholder="Course Name" required>
+                <select class="grade-dropdown" required>
+                    <option value="" disabled selected hidden>Grade</option>
+                    <option value="A+">A+</option>
+                    <option value="A">A</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B">B</option>
+                    <option value="B-">B-</option>
+                    <option value="C+">C+</option>
+                    <option value="C">C</option>
+                    <option value="C-">C-</option>
+                    <option value="D+">D+</option>
+                    <option value="D">D</option>
+                    <option value="F">F</option>
+                </select>
+                <input type="number" class="credits" placeholder="Credits" required>
+                <button type="button" class="remove-course">x</button>
+            </div>
+        </div>
+        
+        <button type="button" id="add-course">+ Add Course</button>
+        
+        <div class="buttons">
+            <button type="button" id="calculate">Calculate GPA</button>
+            <button type="button" id="reset">Reset</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
